@@ -1,0 +1,30 @@
+---
+interface Props {
+	title: string;
+   includeFooter: boolean;
+}
+
+const { title, includeFooter } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Order fresh, made-to-order flan." />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet">
+		<title>{title}</title>
+	</head>
+   <!-- alt bg color: #F5BE7E -->
+	<body class="bg-[#F8E0C3] h-full">
+		<slot />
+      {includeFooter && <footer class="w-full text-center py-3 mt-8 text-sm bg-[#f7ba84]">
+         <span>Made with 🧡 by <a href="https://boonaki.me" class="underline">Josh Durrett</a></span>
+      </footer>}
+	</body>
+</html>

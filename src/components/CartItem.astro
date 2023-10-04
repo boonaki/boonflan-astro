@@ -1,0 +1,28 @@
+---
+interface Props {
+   title: string;
+   totalSlices: number;
+   totalMinis: number;
+   totalWhole: number;
+}
+const { title, totalSlices, totalMinis, totalWhole } = Astro.props;
+const total = 20;
+---
+
+<div class="flex my-3">
+   <a href="/order/classic" class="group mr-2">
+      <img src="/flan-test.jpg" alt="" class="rounded-xl shadow-xl w-[50px] group-hover:scale-[1.02] group-target:scale-[1.02] transition"></img>
+   </a>
+   <div class="w-full">
+      <div class="flex items-end justify-between">
+         <span class="font-semibold text-lg w-fit block mr-1">{title}</span>
+         <div class="grow h-full border-b-2 border-[#acacac] relative top-[-5px] border-dotted border-black"></div>
+         <span class="text-sm ml-1">${total}</span>
+      </div>
+      <div class="gap-1 grid grid-cols-3 w-fit mt-1">
+         <span class="text-sm leading-none">{totalSlices} slices</span>
+         <span class="text-sm leading-none">{totalMinis} mini</span>
+         <span class="text-sm leading-none">{totalWhole} whole</span>
+      </div>
+   </div>
+</div>

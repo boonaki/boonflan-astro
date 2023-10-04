@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NavBar from '../components/NavBar.astro';
+import CartItem from '../components/CartItem.astro';
+import LogoCard from '../components/LogoCard.astro';
+import BagContents from '../components/BagContents';
+---
+
+<Layout title="My Bag" includeFooter={false}>
+   <NavBar />
+   <main class="h-full">
+      <section>
+         <LogoCard />
+      </section>
+      <section class="px-8 md:flex md:justify-center">
+         <div class="md:w-[675px]">
+            <div class="my-8 mb-4 w-fit">
+               <h2 class="font-extrabold text-3xl mb-2">My Bag</h2>
+               <div class="h-[3px] w-1/2 bg-[#a48a69] rounded-full"></div>
+            </div>
+            <BagContents client:only />
+            <div class="text-center mt-6 mb-8">
+               <button class="p-2 w-full rounded-lg bg-[#f7ba84] hover:bg-[#ffa95e] transition font-semibold">Continue to Checkout</button>
+            </div>
+         </div>
+      </section>
+   </main>
+</Layout>
